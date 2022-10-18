@@ -1,5 +1,5 @@
 # Discrete Mathematics
 
 <ul>
-  <li> Written in LaTex </li>
+  <li> Written in LaTeX </li>
 </ul>
