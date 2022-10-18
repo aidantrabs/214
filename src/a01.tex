@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage[paper=letterpaper,margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{newtxtext, newtxmath}
+\usepackage{enumitem}
+\usepackage{titling}
+\usepackage[colorlinks=true]{hyperref}
+
+\setlength{\droptitle}{-6em}
+
+\title{Assignment \#1}
+\author{Aidan Traboulay}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}[leftmargin=\labelsep]
+\item In each of the following cases, find a proposition with the given conditions.
+    \begin{enumerate}
+    \item Find a proposition with three variables p, q, and r that is true when p and r are true and q is false, and false otherwise.
+    \begin{equation*}
+        \left(p \wedge r \wedge \lnot q \right)
+    \end{equation*}
+    \item Find a proposition with three variables p, q, and r that is true when at most one of the three variables is true, and false otherwise.
+    \begin{equation*}
+        \left(\lnot p \wedge \lnot q \wedge \lnot r \right) \vee \left(\lnot p \wedge q \wedge r\right) \vee \left(p \wedge \lnot q \wedge r \right) \vee \left(p \wedge q \wedge \lnot r\right)
+    \end{equation*}
+
+    \item Find a proposition with three variables p, q, and r that is never true.
+        \begin{equation*}
+            \left(p \wedge \lnot p\right) \vee \left(q \wedge \lnot q\right) \vee \left(r \wedge \lnot r\right)
+        \end{equation*}
+    \end{enumerate}
+
+\item In each of the following cases, write an equivalent proposition as stated.
+    \begin{enumerate}
+    \item Write a proposition equivalent to $ p \vee \lnot q $ that uses only p, q, $\lnot$, and the connective $\wedge$.
+    \begin{equation*}
+        p \vee \lnot q \equiv \lnot \left(\lnot p \wedge q\right)
+    \end{equation*}
+    \item Write a proposition equivalent to $ p \to q $ using only p, q, $ \lnot $ , and the connective $\vee.$
+    \begin{equation*}
+        p \to q \equiv \lnot p \vee q
+    \end{equation*}
+    \end{enumerate}
+    
+\item Prove that $\left(q \wedge \left(p \to \lnot q\right)\right) \to \lnot p$ is a tautology using propositional equivalence and the laws of logic.
+
+    Since $ a \to b \equiv \lnot a \vee b $,  $p \to \lnot q \equiv \lnot p \vee \lnot q $
+    \begin{equation*}
+        q \wedge \left(\lnot p \vee \lnot q\right) \to \lnot p
+    \end{equation*}
+    \begin{equation*}
+        \left(q \wedge \lnot p\right) \vee \left(q \wedge \lnot q\right) \to \lnot p 
+    \end{equation*}
+    \begin{equation*}
+        \left(q \wedge \lnot p\right) \to \lnot p 
+    \end{equation*}
+    \begin{equation*}
+        \lnot \left(q \wedge \lnot p\right) \vee \lnot p
+    \end{equation*}
+    \begin{equation*}
+        \left(\lnot q \vee \lnot \left(\lnot p \right) \right) \vee \lnot p
+    \end{equation*}
+    \begin{equation*}
+         \lnot q \vee p \vee \lnot p
+    \end{equation*}
+    \begin{equation*}
+        \lnot q \vee T
+    \end{equation*}
+    
+\item Using c for “it is cold”, d for “it is dry”, r for “it is rainy”, and w for “it is windy”, write the following sentences in symbols.
+    \begin{enumerate}
+        \item It is neither cold nor dry.
+            \begin{equation*}
+                \lnot c \wedge \lnot d
+            \end{equation*}
+        \item It is rainy if it is not cold.
+            \begin{equation*}
+                \lnot c \to r
+            \end{equation*}
+        \item To be windy it is necessary that it be cold
+            \begin{equation*}
+                w \to c
+            \end{equation*}
+        \item It is rainy only if it is windy and cold.
+            \begin{equation*}
+                r \to \left(w \wedge c\right)
+            \end{equation*}
+    \end{enumerate}
+
+\item There are three kinds of people living on an island: knights who always tell
+the truth, knaves who always lie, and spies who can either tell the truth or lie. You encounter
+three people, A, B, and C. You know one of the three people is a knight, one is a knave,
+and one is a spy. Each of the three people knows the type of person each of the other two is.
+How would you identify who is who, if:
+    \begin{enumerate}
+        \item A says “I am not a knight,” B says “I am not a spy,” and C says “I am not a knave.”
+            \begin{tabbing}
+                \> Knights always tell the truth so A can not be the Knight and it can not be a Knave as they always lie.
+            \end{tabbing}
+        \item A says “I am a spy,” B says “I am a spy” and C says “B is a spy.”
+            \begin{tabbing}
+                \> A is the Knave \\
+                \> B is the spy \\
+                \> C is the Knight
+            \end{tabbing}
+    \end{enumerate}
+\item Determine whether the following argument is valid. Justify your answer by showing which rules of inferences have been followed at each step.
+    \begin{tabbing}
+        \> She is a Math Major or a Computer Science Major \\
+        \> If she does not know discrete math, she is not a Math Major. \\
+        \> If she knows discrete math, she is smart. \\
+        \> She is not a Computer Science Major. \\
+        \> Therefore, she is smart.
+    \end{tabbing}
+    
+    M $\simeq$ She is a math major\\
+    C $\simeq$ She is a computer science major \\
+    D $\simeq$ She knows discrete math \\
+    S $\simeq$ She is smart \\
+    \begin{equation*}
+        M \vee C
+    \end{equation*}
+    \begin{equation*}
+       \lnot D \to \lnot M
+    \end{equation*}
+    \begin{equation*}
+        D \to S
+    \end{equation*}    
+    \begin{equation*}
+        \lnot C
+    \end{equation*}    
+    \begin{equation*}
+       \therefore S
+    \end{equation*}
+    \therefore $ The argument is valid $
+
+\item Give a direct proof of the theorem: “if x and y are odd integers, then x + y is even.”
+    \begin{center}
+        p : x is odd \\
+        q: y is odd \\
+        r: x + y is even 
+    \begin{equation*}
+        \therefore \left(p \wedge q\right) \to r
+    \end{equation*}
+    Contrapositve statement: $\lnot r \to \lnot\left(p \wedge q \right)$ \\
+    Using De Morgan's law: $\lnot r \to \left(\lnot p \vee \lnot q \right)$ \\
+    So, $\lnot r \to \left(\lnot p \vee \lnot q \right)$ states "if x + y is not even then either p is not odd or q is not odd." \\
+    Thus, $\lnot r \to \left(\lnot p \vee \lnot q \right)$ states "if x + y is odd then either p is even or q is even."
+\end{center}  
+\item Give a proof by contradiction of the following: “If x and y are even integers, then
+xy is even”.
+
+\end{enumerate}
+\end{document}
