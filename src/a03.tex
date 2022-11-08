@@ -23,36 +23,120 @@
 
 \item Suppose you wish to use mathematical induction to prove that: $ 1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3! + ... + n \cdot n! = (n + 1)! - 1, \forall n \geq 1. $
     \begin{enumerate}
-        \item Write P(1).
+        \item Write P(1). 
+            \begin{flalign}\hspace{4em}
+                & 1 \cdot 1! = 2! - 1 &
+            \end{flalign}
         \item Write P(5).
+            \begin{flalign}\hspace{4em}
+                & 1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3! + 4 \cdot 4! + 5 \cdot 5! = 6! - 1 &
+            \end{flalign}
         \item Write P(k).
+            \begin{flalign}\hspace{4em}
+                & 1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3!...+k \cdot k! = (k+1)! - 1 &
+            \end{flalign}
         \item Write P(k+1).
+            \begin{flalign}\hspace{4em}
+                & 1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3!...(k+1)(k+1)! = (k+2)! - 1 &
+            \end{flalign}
         \item Use mathematical induction to prove that P(n) is true $ \forall n \geq 1 $.
+            \begin{flalign}\hspace{4em}
+                & P(1) : 1 \cdot 1! = 1 \hspace{0.2em} \text{and} \hspace{0.2em} 2! - 1 = 1 \hspace{0.2em} \text{is true} & \\
+                & P(k): 1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3! + ... + k \cdot k! = (k + 1)! - 1 & \\
+                & P(k+1): 1 \cdot 1! + 2 \cdot 2! + 3 \cdot 3! + ... + (k+1) \cdot (k+1)! = (k+2)! - 1 & \\
+                & P(k+1): (k+1)! - 1 + (k+1)(k+1)! = (k+2)! - 1& \\
+                & P(k+1): (k+1)! \cdot (1+(k+1)) - 1 = (k+2)! - 1& \\
+                & P(k+1): (k+1)! \cdot (k+2) - 1 = (k+2)! - 1& \\ 
+                & P(k+1): (k+2)! - 1 = (k+2)! - 1 \therefore \text{proven true} & 
+            \end{flalign}
     \end{enumerate}
 
 \item Use mathematical induction to prove that $ 1 + 3 + 9 + 27 + ... + 3^n = \frac{3^{n+1}-1}{2}, \forall n \geq 0 $
+    \begin{flalign}\hspace{4em} 
+        & P(0): 1 = \frac{3^1-1}{2} \hspace{0.2em} \text{is true} (1 = 1) & \\
+        & P(k): 1 + 3 + 9 + 27 + ... + 3^k = \frac{3^{k+1}-1}{2}, \hspace{0.2em} \text{holds true} & \\
+        & P(k+1): 1 + 3 + 9 +... + 3^{k+1} = \frac{3^{k+1}-1}{2} + 3^{k+1} = \frac{3^{k+1}-1 + 2 \cdot 3^{k+1}}{2} = \frac{3^{k+2}-1}{2}& \\
+        & \therefore Since, P(k) \to P(k+1) \hspace{0.5em} \text{holds true, the statement is proven} & 
+    \end{flalign}
 
 \item Use mathematical induction to prove that $3 \vert (n^3 + 3n^2 + 2n), \forall n \geq 1.$
+    \begin{flalign}\hspace{4em}
+        & Given \hspace{0.5em} P(n) = 3 \vert (n^3 + 3n^2 + 2n), \forall n \geq 1 & \\ 
+        & P(1) = 3 \vert (1^3 + 3(1)^2 + 2(1)) = 3 \vert 6, \hspace{0.5em} 3 \vert 6 \hspace{0.5em} (true) & \\
+        & P(k) = 3 \vert k^3 + 3k^2 + 2k \hspace{0.2em} \text{, holds true} & \\
+        & P(k+1) = 3 \vert (k+1)^3 + 3(k+1)^2 + 2(k+1) = 3 \vert 3(k^2 + 3k + 2) + (k^3 + 3k^2 +2k) & \\
+        & P(k+1) = 3 \vert 3(k^2 + 3k + 2) + P(k) \hspace{0.2em} \text{where P(k) is true \&} \hspace{0.2em} 3(k^2 + 3k + 2) \hspace{0.2em} \vert 3 & \\
+        & \therefore \text{Since},  P(k) \to P(k+1) \hspace{0.5em} \text{holds true, the statement is proven} & 
+    \end{flalign}
+
+\item Use mathematical induction to prove that any integer amount of postage of 18 cents or more can be made from an infinite supply of 4-cent and 7-cent stamps.
+    \begin{flalign}\hspace{4em}
+       \nonumber & \textbf{Base Cases}\text{, where 4 and 7 represent the cent stamps}: & \\ 
+       & n = 18 \to 4(1) + 7(2) = 18 & \\
+       & n = 19 \to 4(3) + 7(1) = 19 & \\
+       & n = 20 \to 4(5) + 7(0) = 20 & \\
+       & n = 21 \to 4(0) + 7(3) = 21 & \\
+        \nonumber & \textbf{Inductive Hypothesis}\text{, where 4 and 7 represent the cent stamps}: & \\ 
+       & \text{Let, } 4a + 7b = 18 \hspace{0.2em} \text{for a, b} \geq 0 &\\ 
+        \nonumber & \textbf{Inductive proof}\text{, where 4 and 7 represent the cent stamps}: & \\ 
+       & \text{For some n, } 4a + 7b = n & \\
+       & 4(2) + 7(2) = 22 & \\ 
+       & 4(4) + 7(1) = 23 & \\
+       & 4(6) + 7(0) = 24 & \\
+       & 4(1) + 7(3) = 25 & \\
+       & \therefore n + 4 = 7b + 4(a+1) & 
+    \end{flalign}
 
 \item Give a recursive definition of the function $ f $ with $ n \in \textbf{Z}^+. $
     \begin{enumerate}
         \item $ f(n) = 2^n $
+            \begin{flalign}\hspace{4em}
+                & f(1) = 2 \hspace{0.2em} \text{(base case)} & \\
+                & f(n) = 2f(n-1) &
+            \end{flalign}
         \item $ f(n) = 5n + 2 $ 
+            \begin{flalign}\hspace{4em}
+                & f(1) = 4 \hspace{0.2em} \text{(base case)} & \\
+                & f(n) = f(n-1) + 5 &
+            \end{flalign}
     \end{enumerate}
 
 \item Give a recursive definition of the sequence $ \{a_n\} $ with $ n \in \textbf{Z}^+. $
     \begin{enumerate}
         \item $ a_n = 2^n $
-        \item $ a_n = 3n + 5 $
+            \begin{flalign}\hspace{4em}
+                & a_1 = 2 \hspace{0.2em} \text{(base case)} & \\
+                & a_n = 2(a_{n-1}) & 
+            \end{flalign}
+        \item $ a_n = 3n - 5 $
+            \begin{flalign}\hspace{4em}
+                & a_1 = -2 \hspace{0.2em} \text{(base case)} & \\
+                & a_n = 3 + a_{n-1} & 
+            \end{flalign}
     \end{enumerate}
 
-\item Give a recursive definition with initial conditons of the set S.
+\item Give a recursive definition with initial conditions of the set S.
     \begin{enumerate}
         \item $ \{3,7,11,15,19,23,...\} $
+            \begin{flalign}\hspace{4em}
+                & 3 \in S \hspace{0.5em}\text{(initial condition)} & \\
+                & x \in S \to x + 4 \in S &
+            \end{flalign}
         \item $ \{...,-5,-3,-1,1,3,5,...\} $
+            \begin{flalign}\hspace{4em}
+                    & 1 \in S \hspace{0.5em}\text{(initial condition)} & \\
+                    &  x \in S \to x \pm 2 \in S & 
+            \end{flalign}
     \end{enumerate}
 
 \item Give a recursive algorithm for computing $na$, where $n$ is a positive integer and $a$ is a real number.
-    
+    \begin{flalign}\hspace{4em}
+        & \textbf{procedure} \hspace{0.5em} product(a: \mathbb{R}, n: \mathbb{Z}^{+}) & \\
+        & \textbf{if} \hspace{0.5em} n = 1 \hspace{0.5em} \textbf{then} \hspace{0.5em} product(a,n) := a & \\
+        & \textbf{else} \hspace{0.5em} product(a,n) := a + product(a, (n-1)) &
+    \end{flalign}
 \end{enumerate}
 \end{document}
+
+
+
