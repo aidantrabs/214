@@ -20,47 +20,136 @@
 \item Suppose that a "word" is any string of seven letters of the alphabet, with repeated letters allowed.
     \begin{enumerate}
         \item How many words begin with A or B and end with A or B?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{Given the first and last letters begin with A or B} \to 2^2 & \\
+                \nonumber & \text{Thus, there are 5 other letter} \to 26^5 & \\
+                \nonumber & (2^2)\cdot(26^5) = 47525504  & \\
+                 & \therefore 47525504 \hspace{0.4em} \text{combinations of words that begin with A or B and end with A or B} &
+            \end{flalign}
         \item How many words begin with a vowel or end with a vowel?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{Let A = combos beginning with vowel}: 5\cdot 26^6 & \\
+                \nonumber & \text{Let B = combos ending with vowel}: 5\cdot 26^6 & \\
+                \nonumber & \text{A \& B = combos beginning with and ending with vowel}: 5^2 \cdot 26^5 \\
+                \nonumber & \therefore \text{Combos beginning or ending with vowel} : [(5\cdot26^6) + (5\cdot26^6)] - 5^2\cdot26^5 & \\
+                & = 2792123360 \hspace{0.3em} \text{words} &
+            \end{flalign}
     \end{enumerate}
 
 \item Consider all bit strings of length 12.
     \begin{enumerate}
         \item How many begin with 110?
+            \begin{flalign}\hspace{4em}
+                \nonumber & 111 222 222 222 & \\ 
+                & \therefore 1^3 \cdot 2^9 = 512 &
+            \end{flalign}
         \item How many have exactly four 1’s?
+            \begin{flalign}\hspace{4em}
+                & C(12,4) = \frac{12!}{4!8!} = 495 &
+            \end{flalign}
     \end{enumerate}
 
 \item A club with 20 women and 17 men needs to form a committee of size six.
     \begin{enumerate}
         \item How many committees are possible if the committee must have three women and three men?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{3 Men: C(17,3)} & \\
+                \nonumber & \text{3 Women: C(20,3)} & \\
+                & \therefore C(17,3) \cdot C(20,3) = \frac{17!}{3!14!} \cdot \frac{20!}{3!17!} = 775200 &
+            \end{flalign}
         \item How many committees are possible if the committee must have at least two men?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{Possible combinations: }& \\
+                \nonumber & \text{Min: 2 men, 4 women:} \hspace{0.4em} C(17,2)\cdot C(20,4) + &  \\
+                \nonumber & \text{3 men, 3 women:} \hspace{0.4em} C(17,3)\cdot C(20,3)  + & \\
+                \nonumber & \text{4 men, 2 women:} \hspace{0.4em} C(17,4)\cdot C(20,2)  + & \\
+                \nonumber & \text{5 men, 1 women:} \hspace{0.4em} C(17,5)\cdot C(20,1) + & \\
+                \nonumber & \text{Max: 6 men, 0 women:} \hspace{0.4em} C(17,6)\cdot C(20,0) & \\
+                \nonumber & = (136\cdot4845) + (680\cdot1140) + (2380\cdot190) + (6188\cdot20) + (12376\cdot1) & \\
+                & = 2022456 &
+            \end{flalign}
     \end{enumerate}
 
 \item Use the binomial theorem to expand $(2c - 3d)^4.$
+        \begin{flalign}\hspace{4em}
+            \nonumber & \text{Binomial Theorem: } \frac{(a+b)}{n} = \sum_{k=0}^{n} C(n,k)\cdot a^{n-k}\cdot b^k& \\
+            \nonumber & (2c -3d)^4 = \frac{(a+b)}{n} = \sum_{k=0}^{4} C(4,k)\cdot (2c)^{4-k}\cdot (-3d)^k & \\
+            \nonumber & = C(4,0) \cdot (2c)^4 \cdot (-3d)^0 + C(4,1) \cdot (2c)^3 \cdot (-3d)^1+ C(4,2) \cdot (2c)^2 \cdot (-3d)^2 & \\
+            \nonumber & + C(4,3) \cdot (2c)^1 \cdot (-3d)^3 + C(4,4) \cdot (2c)^0 \cdot (-3d)^4 & \\ 
+            & = 16c^4 - 96c^3d + 216c^2d^2 - 216cd^3 + 81d^4 &
+        \end{flalign}
 
 \item 
     \begin{enumerate}
         \item What is the probability that a fair coin lands Heads 6 times in a row?
+            \begin{flalign}\hspace{4em}
+               \nonumber & \text{A fair coin for either heads or tails = } (\frac{1}{2}) & \\
+               & \text{6 heads:} (\frac{1}{2})^6 = \frac{1}{64} \hspace{0.4em} \text{probability}&
+            \end{flalign}
         \item What is the probability that a fair coin lands Heads 4 times out of 5 flips?
+            \begin{flalign}\hspace{4em}
+               \nonumber & \text{A fair coin for either heads or tails = } (\frac{1}{2}) & \\
+                \nonumber & \text{A fair coin flips heads = } \frac{1}{16}& \\
+                \nonumber & \text{Combination of 4 heads on 5 flips} = C(5,4) = 5 & \\ 
+                & \therefore \frac{1}{2} \cdot \frac{1}{16} \cdot 5 = \frac{5}{32} \hspace{0.4em} \text{probability}&
+            \end{flalign}
     \end{enumerate}
-
-\item Suppose you pick two cards, one at a time, at random, from an ordinary deck of
-52 cards. Find
+\vspace{9em}
+\item Suppose you pick two cards, one at a time, at random, from an ordinary deck of 52 cards. Find
     \begin{enumerate}
         \item $ p $ (both cards are diamonds).
+            \begin{flalign}\hspace{4em}
+                \nonumber & \# \text{ of diamonds in 52-card deck:} 13 & \\
+                \nonumber & \text{Let} \hspace{0.4em} e_0 \hspace{0.4em} \text{= 1st card being diamond} & \\
+                \nonumber & \text{Let} \hspace{0.4em} e_1 \hspace{0.4em} \text{= 2nd card being diamond} & \\
+                \nonumber & P(e_0) = \frac{13}{52} = \frac{1}{4} & \\
+                \nonumber & P(e_1) = \frac{12}{52} = \frac{4}{17} & \\
+                & P(e_0 \cdot e_1) = \frac{1}{4} \cdot \frac{4}{17} = \frac{1}{17}&
+            \end{flalign}
         \item $ p $ (the cards form a pair).
+            \begin{flalign}\hspace{4em}
+                \nonumber & \forall \hspace{0.3em} \text{pairs there are 4 suites}: C(4,2) & \\
+                \nonumber & C(52,2) \hspace{0.3em} \text{represents pairs for the 52-card deck} & \\
+                \nonumber & \text{Since for each suite there are 13 cards} & \\
+                \nonumber & \text{Let e = cards that form a pair} & \\
+                & \therefore P(e) = \frac{13\cdot C(4,2)}{C(52,2)} = \frac{1}{17} &
+            \end{flalign}
     \end{enumerate}
     
 \item Suppose you have 40 different books (20 math books, 15 history books, and 5
 geography books).
     \begin{enumerate}
         \item You pick two books at random, one at a time. What is the probability that both books are history books?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{For history books}: C(15,2) = \frac{15!}{2!13! } & \\
+                \nonumber & \text{For all books}: C(40,2) = \frac{40!}{2!38!} & \\
+                & \therefore \frac{C(15,2)}{C(40,2)} = \frac{7}{52} \hspace{0.4em}\text{probability} &  
+            \end{flalign}
         \item You pick two books at random, one at a time. What is the probability that the two books are from different disciplines?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{Let A = A history book and a math book: } C(15,1) \cdot C(20,1) & \\
+                \nonumber & \text{Let B = A history book and a geography book:} C(5,1) \cdot C(15,1) & \\
+                \nonumber & \text{Let C = A geography book and a math book:} C(5,1) \cdot C(20,1)& \\
+                & \therefore \frac{[P(A) + P(B) + P(C)]}{C(40,2)} = \frac{300 + 75 + 100}{780} = \frac{475}{780} = \frac{95}{156}&
+            \end{flalign}
     \end{enumerate}
-
+\vspace{9em}
 \item Suppose you pick a bit string from the set of all bit strings of length ten.
     \begin{enumerate}
         \item What is the probability that the bit string has exactly two 1’s?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{Possible 10-bit strings}: 2^{10} & \\
+                \nonumber & \text{Possible 10-bit strings with two 1's}: C(10,2) & \\
+                \nonumber & \text{Let E = exactly two 1's} & \\
+                & \therefore P(E) = \frac{C(10,2)}{2^{10}} = \frac{45}{1024} &
+            \end{flalign}
         \item What is the probability that the bit string has exactly two 1’s, given that the string begins with a 1?
+            \begin{flalign}\hspace{4em}
+                \nonumber & \text{Possible 10-bit strings}: 2^{10} & \\
+                \nonumber & \text{Possible 10-bit strings starting at 1}: C(9,1) & \\
+                \nonumber & \text{Let E = a string with exactly two 1's that begin with 1} & \\
+                & \therefore P(E) = \frac{C(9,1)}{2^{10}} = \frac{9}{1024} &
+            \end{flalign}
     \end{enumerate}
 \end{enumerate}
 \end{document}
